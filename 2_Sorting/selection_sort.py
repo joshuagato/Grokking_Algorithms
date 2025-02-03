@@ -20,5 +20,16 @@ def find_smallest(array):
 
     return smallest
 
-print(find_smallest_index([5, 4, 3, 2, 1, 9, 0, 6, 8]))
-print(find_smallest([5, 4, 3, 2, 1, 9, 0, 6, 8]))
+print('find_smallest_index: ', find_smallest_index([5, 4, 10, 3, 2, 11, 1, 9, 0, 6, 8]))
+print('find_smallest: ', find_smallest([5, 4, 10, 3, 2, 11, 1, 9, 0, 6, 8]))
+
+def selection_sort(array):
+    new_array = []
+
+    for i in range(len(array)):
+        smallest = find_smallest_index(array)
+        new_array.append(array.pop(smallest))
+
+    return new_array
+
+print('selection_sort: ', selection_sort([5, 4, 10, 3, 2, 11, 1, 9, 0, 6, 8]))
